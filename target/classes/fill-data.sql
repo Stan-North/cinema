@@ -1,5 +1,17 @@
---0. Добавить 10 мест с помощью sql скрипта (т.е. запустить скрипт) и положить в скрипт fill-data.sql (папка resources).:
-  --A1 -> A5
-  --B1 -> B5
-INSERT INTO seat (title)
-VALES ('A1'), ('A2'), ('A3'), ('A4'), ('A5'), ('B1'), ('B2'), ('B3'), ('B4'), ('B5');
+DO $$
+	DECLARE
+	counter INT;
+	first_row_prefix VARCHAR := 'A';
+	second_row_prefix VARCHAR := 'B';
+	BEGIN
+		FOR i IN 1..5 LOOP
+		INSERT INTO seat (title)
+		VALUES(first_row_prefix || i);
+		END LOOP;
+
+		FOR i IN 1..5 LOOP
+		INSERT INTO seat (title)
+		VALUES(second_row_prefix || i);
+		END LOOP;
+	END;
+$$;

@@ -15,16 +15,13 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class SeatRepositoryImpl implements SeatRepository {
     private final JdbcTemplate jdbcTemplate;
+    private static final String SELECT_BY_ID_SQL = "SELECT * FROM seat WHERE id = ?;";
+    private static final String SELECT_ALL_SQL = "SELECT * FROM seat";
 
     @Override
     public Optional<Seat> findById(Integer id) {
-        String sql = """
-                SELECT *
-                FROM seat
-                WHERE id = ?;
-                """;
         try {
-            return Optional.of(jdbcTemplate.queryForObject(sql, this::mapToSeat, id));
+            return Optional.of(jdbcTemplate.queryForObject(SELECT_BY_ID_SQL, this::mapToSeat, id));
         } catch (EmptyResultDataAccessException e) {
             return Optional.empty();
         }
@@ -32,11 +29,7 @@ public class SeatRepositoryImpl implements SeatRepository {
 
     @Override
     public List<Seat> findAll() {
-        String sql = """
-                SELECT *
-                FROM seat;
-                """;
-        return jdbcTemplate.query(sql, this::mapToSeat);
+        return jdbcTemplate.query(SELECT_ALL_SQL, this::mapToSeat);
     }
 
     @SneakyThrows

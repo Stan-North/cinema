@@ -1,6 +1,6 @@
 package com.javaacademy.cinema.repository.movie;
 
-import com.javaacademy.cinema.dto.SaveMovieDto;
+import com.javaacademy.cinema.dto.SaveMovieRequest;
 import com.javaacademy.cinema.entity.Movie;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
@@ -16,30 +16,23 @@ import java.util.Optional;
 @RequiredArgsConstructor
 public class MovieRepositoryImpl implements MovieRepository {
     private final JdbcTemplate jdbcTemplate;
+    private static final String SELECT_BY_ID = "SELECT * FROM movie WHERE id = ?;";
+    public static final String SELECT_ALL = "SELECT * FROM movie;";
+    public static final String INSERT_MOVIE = "INSERT INTO movie (name, description) VALUES (?, ?) RETURNING id;";
 
     @Override
     public Optional<Movie> findById(Integer id) {
-        String sql = """
-                SELECT *
-                FROM movie
-                WHERE id = ?;
-                """;
         try {
-            return Optional.of(jdbcTemplate.queryForObject(sql, this::mapToMovie, id));
+            return Optional.of(jdbcTemplate.queryForObject(SELECT_BY_ID, this::mapToMovie, id));
         } catch (EmptyResultDataAccessException e) {
             return Optional.empty();
         }
     }
 
     @Override
-    public Movie saveMovie(SaveMovieDto dto) {
-        String sql = """
-              INSERT INTO movie (name, description) 
-               VALUES (?, ?)
-               RETURNING id;
-                """;
+    public Movie saveMovie(SaveMovieRequest dto) {
         Integer returningId = jdbcTemplate.queryForObject(
-                sql,
+                INSERT_MOVIE,
                 Integer.class,
                 dto.getName(),
                 dto.getDescription());
@@ -47,16 +40,8 @@ public class MovieRepositoryImpl implements MovieRepository {
     }
 
     @Override
-    public Optional<List<Movie>> findAll() {
-        String sql = """
-                SELECT *
-                FROM movies;
-                """;
-        try {
-            return Optional.of(jdbcTemplate.query(sql, this::mapToMovie));
-        } catch (EmptyResultDataAccessException e) {
-            return Optional.empty();
-        }
+    public List<Movie> findAll() {
+        return jdbcTemplate.query(SELECT_ALL, this::mapToMovie);
     }
 
     @SneakyThrows

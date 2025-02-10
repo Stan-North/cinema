@@ -1,6 +1,7 @@
 package com.javaacademy.cinema.repository.session;
 
-import com.javaacademy.cinema.dto.SaveSessionDto;
+import com.javaacademy.cinema.dto.SaveSessionRequest;
+import com.javaacademy.cinema.entity.Movie;
 import com.javaacademy.cinema.entity.Session;
 import com.javaacademy.cinema.repository.movie.MovieRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,48 +19,38 @@ import java.util.Optional;
 public class SessionRepositoryImpl implements SessionRepository {
     private final JdbcTemplate jdbcTemplate;
     private final MovieRepository movieRepository;
-
-    @Override
-    public Optional<Session> finById(Integer id) {
-        String sql = """
-                SELECT *
-                FROM session
-                WHERE id = ?;
-                """;
-        try {
-            return Optional.of(jdbcTemplate.queryForObject(sql, this::mapToSession, id));
-        } catch (EmptyResultDataAccessException e) {
-            return Optional.empty();
-        }
-    }
-
-    @Override
-    public Optional<List<Session>> findAll() {
-        String sql = """
-                SELECT *
-                FROM session;
-                """;
-        try {
-            return Optional.of(jdbcTemplate.query(sql, this::mapToSession));
-        } catch (EmptyResultDataAccessException e) {
-            return Optional.empty();
-        }
-    }
-
-    @Override
-    public Session saveSession(SaveSessionDto dto) {
-        String sql = """
+    public static final String SELECT_BY_ID_SQL = " SELECT * FROM session WHERE id = ?;";
+    public static final String SELECT_ALL_SQL = "SELECT * FROM session;";
+    public static final String INSERT_SESSION_SQL = """
                 INSERT INTO session (movie_id, date, price)
                 VALUES (?, ?, ?)
                 RETURNING id;
                 """;
+
+    @Override
+    public Optional<Session> finById(Integer id) {
+        try {
+            return Optional.of(jdbcTemplate.queryForObject(SELECT_BY_ID_SQL, this::mapToSession, id));
+        } catch (EmptyResultDataAccessException e) {
+            return Optional.empty();
+        }
+    }
+
+    @Override
+    public List<Session> findAll() {
+        return jdbcTemplate.query(SELECT_ALL_SQL, this::mapToSession);
+    }
+
+    @Override
+    public Session saveSession(SaveSessionRequest request) {
         Integer sessionId = jdbcTemplate.queryForObject(
-                sql,
+                INSERT_SESSION_SQL,
                 Integer.class,
-                dto.getMovie().getId(),
-                dto.getDate(),
-                dto.getPrice());
-        return new Session(sessionId, dto.getMovie(), dto.getDate(), dto.getPrice());
+                request.getMovieId(),
+                request.getDate(),
+                request.getPrice());
+        Optional<Movie> movie = movieRepository.findById(request.getMovieId());
+        return new Session(sessionId, movie.orElseThrow(), request.getDate(), request.getPrice());
     }
 
     @SneakyThrows

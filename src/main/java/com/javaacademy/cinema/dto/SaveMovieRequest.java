@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Data
 @AllArgsConstructor
-public class SaveMovieDto {
+public class SaveMovieRequest {
     private String name;
     private String description;
 }

@@ -4,14 +4,13 @@ import com.javaacademy.cinema.common.ErrorMessages;
 import com.javaacademy.cinema.dto.SaveTicketDto;
 import com.javaacademy.cinema.entity.Session;
 import com.javaacademy.cinema.entity.Ticket;
-import com.javaacademy.cinema.exception.TicketDoesNotExist;
+import com.javaacademy.cinema.exception.TicketDoesNotExistException;
 import com.javaacademy.cinema.exception.TicketStatusException;
 import com.javaacademy.cinema.repository.seat.SeatRepository;
 import com.javaacademy.cinema.repository.session.SessionRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.data.relational.core.sql.Select;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -25,16 +24,32 @@ public class TicketRepositoryImpl implements TicketRepository {
     private final JdbcTemplate jdbcTemplate;
     private final SessionRepository sessionRepository;
     private final SeatRepository seatRepository;
+    private static final String SELECT_BY_ID_SQL = "SELECT * FROM ticket WHERE id = ?;";
+    private static final String INSERT_TICKET_SQL = """
+                INSERT INTO ticket (seat_id, session_id)
+                VALUES (?, ?)
+                RETURNING id;
+                """;
+    private static final String SELECT_BY_STATUS = """
+                SELECT *
+                FROM ticket
+                WHERE session_id = ? AND is_bought = ?;
+                """;
+    private static final String UPDATE_STATUS = """
+                UPDATE ticket
+                SET is_bought = true
+                WHERE id = ?;
+                """;
+    private static final String SELECT_ID = """
+            SELECT id
+            from ticket
+            WHERE seat_id = ? AND session_id = ?;
+            """;
 
     @Override
     public Optional<Ticket> findById(Integer id) {
-        String sql = """
-                SELECT  *
-                FROM ticket
-                WHERE id = ?;
-                """;
         try {
-            return Optional.of(jdbcTemplate.queryForObject(sql, this::mapToTicket, id));
+            return Optional.of(jdbcTemplate.queryForObject(SELECT_BY_ID_SQL, this::mapToTicket, id));
         } catch (EmptyResultDataAccessException e) {
             return Optional.empty();
         }
@@ -42,13 +57,8 @@ public class TicketRepositoryImpl implements TicketRepository {
 
     @Override
     public Ticket save(SaveTicketDto dto) {
-        String sql = """
-                INSERT INTO ticket (seat_id, session_id)
-                VALUES (?, ?)
-                RETURNING id;
-                """;
         Integer returningId = jdbcTemplate.queryForObject(
-                sql,
+                INSERT_TICKET_SQL,
                 Integer.class,
                 dto.getSeat().getId(),
                 dto.getSession().getId());
@@ -57,13 +67,8 @@ public class TicketRepositoryImpl implements TicketRepository {
 
     @Override
     public List<Ticket> findBought(Session session) {
-        String sql = """
-                SELECT *
-                FROM ticket
-                WHERE session_id = ? AND is_bought = ?;
-                """;
         return jdbcTemplate.query(
-                sql,
+                SELECT_BY_STATUS,
                 this::mapToTicket,
                 session.getId(),
                 true);
@@ -71,13 +76,8 @@ public class TicketRepositoryImpl implements TicketRepository {
 
     @Override
     public List<Ticket> findNotBought(Session session) {
-        String sql = """
-                SELECT *
-                FROM ticket
-                WHERE session_id = ? AND is_bought = ?;
-                """;
         return jdbcTemplate.query(
-                sql,
+                SELECT_BY_STATUS,
                 this::mapToTicket,
                 session.getId(),
                 false);
@@ -85,7 +85,7 @@ public class TicketRepositoryImpl implements TicketRepository {
 
     @Override
     public void checkAndUpdateTicket(Integer id) {
-        Ticket ticket = findById(id).orElseThrow(TicketDoesNotExist::new);
+        Ticket ticket = findById(id).orElseThrow(TicketDoesNotExistException::new);
         if (!ticket.getIsBought()) {
             ticket.setIsBought(true);
             updateTicketStatus(id);
@@ -95,15 +95,19 @@ public class TicketRepositoryImpl implements TicketRepository {
     }
 
     private void updateTicketStatus(Integer id) {
-        String sql = """
-                UPDATE ticket
-                SET is_bought = true
-                WHERE id = ?;
-                """;
-        int countRows = jdbcTemplate.update(sql, ps -> ps.setInt(1, id));
+        int countRows = jdbcTemplate.update(UPDATE_STATUS, ps -> ps.setInt(1, id));
         if (countRows < 1) {
             throw new RuntimeException(ErrorMessages.NO_ONE_ROWS_UPDATED);
         }
+    }
+
+    @Override
+    public Integer findTicketId(Integer seatId, Integer sessionId) {
+        return jdbcTemplate.queryForObject(
+                SELECT_ID,
+                Integer.class,
+                seatId,
+                sessionId);
     }
 
     @SneakyThrows

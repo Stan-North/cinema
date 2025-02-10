@@ -19,6 +19,7 @@
 		<checkstyle-plugin.version>3.3.0</checkstyle-plugin.version>
 		<checkstyle.version>10.17.0</checkstyle.version>
 		<checkstyle.puppycrawl.version>10.17.0</checkstyle.puppycrawl.version>
+		<openapi.version>2.6.0</openapi.version>
 	</properties>
 
 	<dependencies>
@@ -30,7 +31,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
@@ -46,6 +46,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
+			<version>${openapi.version}</version>
 		</dependency>
 	</dependencies>
 

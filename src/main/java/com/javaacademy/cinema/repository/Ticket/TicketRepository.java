@@ -13,4 +13,5 @@ public interface TicketRepository {
     void checkAndUpdateTicket(Integer id);
     List<Ticket> findBought(Session session);
     List<Ticket> findNotBought(Session session);
+    Integer findTicketId(Integer seatId, Integer sessionId);
 }

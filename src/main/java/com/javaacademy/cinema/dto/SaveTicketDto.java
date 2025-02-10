@@ -12,5 +12,4 @@ import lombok.NoArgsConstructor;
 public class SaveTicketDto {
     private Session session;
     private Seat seat;
-    private Boolean isBought;
 }

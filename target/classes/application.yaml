@@ -4,3 +4,10 @@ spring:
     username: postgres
     password: 1234
     driver: org.postgresql.Driver
+
+server:
+  port: 8080
+
+application:
+    admin-auth-header:
+      header-value: secretadmin123

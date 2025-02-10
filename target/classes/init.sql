@@ -12,7 +12,7 @@ CREATE TABLE seat (
 );
 
 --создание сущности сеанс
-CREATE TABLE session (
+CREATE TABLE "session" (
 	id SERIAL PRIMARY KEY,
 	movie_id INT NOT NULL,
 	date TIMESTAMP NOT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE ticket (
 	id SERIAL PRIMARY KEY,
 	seat_id INT NOT NULL,
 	session_id INT NOT NULL,
-	is_bought BOOLEAN NOT NULL,
+	is_bought BOOLEAN NOT NULL DEFAULT FALSE,
 	FOREIGN KEY(seat_id) REFERENCES seat (id),
-	FOREIGN KEY(session_id) REFERENCES session (id)
+	FOREIGN KEY(session_id) REFERENCES "session" (id)
 );

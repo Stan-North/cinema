@@ -1,6 +1,5 @@
 package com.javaacademy.cinema.dto;
 
-import com.javaacademy.cinema.entity.Movie;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -9,8 +8,8 @@ import java.time.LocalDateTime;
 
 @Data
 @AllArgsConstructor
-public class SaveSessionDto {
-    private Movie movie;
+public class SaveSessionRequest {
+    private Integer movieId;
     private LocalDateTime date;
     private BigDecimal price;
 }
