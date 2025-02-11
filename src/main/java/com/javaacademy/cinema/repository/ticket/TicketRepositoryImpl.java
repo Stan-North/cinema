@@ -1,4 +1,4 @@
-package com.javaacademy.cinema.repository.Ticket;
+package com.javaacademy.cinema.repository.ticket;
 
 import com.javaacademy.cinema.common.ErrorMessages;
 import com.javaacademy.cinema.dto.SaveTicketDto;

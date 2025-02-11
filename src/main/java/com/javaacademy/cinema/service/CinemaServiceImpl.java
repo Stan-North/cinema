@@ -9,7 +9,7 @@ import com.javaacademy.cinema.exception.SeatDoesNotExistException;
 import com.javaacademy.cinema.exception.SessionDoesNotExistException;
 import com.javaacademy.cinema.mapper.MovieMapper;
 import com.javaacademy.cinema.mapper.SessionMapper;
-import com.javaacademy.cinema.repository.Ticket.TicketRepository;
+import com.javaacademy.cinema.repository.ticket.TicketRepository;
 import com.javaacademy.cinema.repository.movie.MovieRepository;
 import com.javaacademy.cinema.repository.seat.SeatRepository;
 import com.javaacademy.cinema.repository.session.SessionRepository;
@@ -113,22 +113,4 @@ public class CinemaServiceImpl implements CinemaService {
         ticketRepository.checkAndUpdateTicket(ticketId);
         return new TicketDto(ticketId, seatTitle, session.getMovie().getName(), session.getDate());
     }
-
-    //private Integer id;
-    //    private Session session;
-    //    private Seat seat;
-    //    private Boolean isBought;
-
-    //4. Создать endpoint POST /ticket/booking - будет выкупать билет на сеанс. На вход:
-    //{
-    //	"session_id": 4,
-    //	"place_name": "A1"
-    //}
-    //4.1 Находит по session_id и номеру места билет, меняет его статус на "купленный". Возвращает id купленного билета в формате:
-    //{
-    //	"ticket_id": [id билета],
-    //	"place_name": [имя места],
-    //	"movie_name": [имя фильма],
-    //	"date": [дата сеанса]
-    //}
 }
