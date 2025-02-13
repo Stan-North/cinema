@@ -30,6 +30,7 @@ public class CinemaServiceImpl implements CinemaService {
     private final MovieMapper movieMapper;
     private final SessionMapper sessionMapper;
     private static final int PAGE_SIZE = 10;
+    private static final int DECREMENT_FOR_PAGINATION = 1;
 
     @Override
     public Movie saveMovie(SaveMovieRequest dto) {
@@ -69,25 +70,13 @@ public class CinemaServiceImpl implements CinemaService {
     @Override
     public PageDto<MovieDto> getMoviePageDto(Integer pageNumber) {
         List<MovieDto> allMovies = findAllMovies();
-        List<MovieDto> contentPerPage = allMovies.stream()
-                        .sorted(Comparator.comparing(MovieDto::getName))
-                        .skip(PAGE_SIZE * pageNumber)
-                        .limit(PAGE_SIZE)
-                        .toList();
-                int amountOfPages = allMovies.size() / PAGE_SIZE;
-                return new PageDto<>(contentPerPage, pageNumber, amountOfPages, PAGE_SIZE, contentPerPage.size());
+        return getPageDto(allMovies, Comparator.comparing(MovieDto::getName), pageNumber);
     }
 
     @Override
     public PageDto<SessionDto> getSessionPageDto(Integer pageNumber) {
         List<SessionDto> allSession = findAllSession();
-        List<SessionDto> contentPerPage = allSession.stream()
-                .sorted(Comparator.comparing(SessionDto::getId))
-                .skip(PAGE_SIZE * pageNumber)
-                .limit(PAGE_SIZE)
-                .toList();
-        int amountOfPages = allSession.size() / PAGE_SIZE;
-        return new PageDto<>(contentPerPage, pageNumber, amountOfPages, PAGE_SIZE, contentPerPage.size());
+        return getPageDto(allSession, Comparator.comparing(SessionDto::getId), pageNumber);
     }
 
     @Override
@@ -112,5 +101,16 @@ public class CinemaServiceImpl implements CinemaService {
         Integer ticketId = ticketRepository.findTicketId(seatId, session.getId());
         ticketRepository.checkAndUpdateTicket(ticketId);
         return new TicketDto(ticketId, seatTitle, session.getMovie().getName(), session.getDate());
+    }
+
+    private <T> PageDto<T> getPageDto(List<T> items, Comparator<T> comparator, Integer pageNumber) {
+        int pageIndex = pageNumber - DECREMENT_FOR_PAGINATION;
+        List<T> contentPerPage = items.stream()
+                .sorted(comparator)
+                .skip(PAGE_SIZE * pageIndex)
+                .limit(PAGE_SIZE)
+                .toList();
+        int amountOfPages = items.size() / PAGE_SIZE;
+        return new PageDto<>(contentPerPage, pageNumber, amountOfPages, PAGE_SIZE, contentPerPage.size());
     }
 }
