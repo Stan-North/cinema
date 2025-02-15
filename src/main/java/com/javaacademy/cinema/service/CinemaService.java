@@ -1,6 +1,12 @@
 package com.javaacademy.cinema.service;
 
-import com.javaacademy.cinema.dto.*;
+import com.javaacademy.cinema.dto.BuyTicketRequest;
+import com.javaacademy.cinema.dto.MovieDto;
+import com.javaacademy.cinema.dto.PageDto;
+import com.javaacademy.cinema.dto.SaveMovieRequest;
+import com.javaacademy.cinema.dto.SaveSessionRequest;
+import com.javaacademy.cinema.dto.SessionDto;
+import com.javaacademy.cinema.dto.TicketDto;
 import com.javaacademy.cinema.entity.Movie;
 import com.javaacademy.cinema.entity.Session;
 import com.javaacademy.cinema.entity.Ticket;

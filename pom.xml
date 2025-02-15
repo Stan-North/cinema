@@ -20,6 +20,7 @@
 		<checkstyle.version>10.17.0</checkstyle.version>
 		<checkstyle.puppycrawl.version>10.17.0</checkstyle.puppycrawl.version>
 		<openapi.version>2.6.0</openapi.version>
+		<rest.assured.version>5.4.0</rest.assured.version>
 	</properties>
 
 	<dependencies>
@@ -45,6 +46,12 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>${rest-assured.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>

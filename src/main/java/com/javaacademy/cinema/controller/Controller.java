@@ -2,7 +2,11 @@ package com.javaacademy.cinema.controller;
 
 import com.javaacademy.cinema.common.ErrorMessages;
 import com.javaacademy.cinema.config.AppConfig;
-import com.javaacademy.cinema.dto.*;
+import com.javaacademy.cinema.dto.BuyTicketRequest;
+import com.javaacademy.cinema.dto.PageDto;
+import com.javaacademy.cinema.dto.SaveMovieRequest;
+import com.javaacademy.cinema.dto.SaveSessionRequest;
+import com.javaacademy.cinema.dto.TicketDto;
 import com.javaacademy.cinema.entity.Movie;
 import com.javaacademy.cinema.entity.Session;
 import com.javaacademy.cinema.entity.Ticket;
@@ -19,7 +23,13 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
@@ -31,8 +41,8 @@ public class Controller {
     private static final String HEADER_NAME = "user-token";
 
     @PostMapping("/movie")
-    @Operation(summary = "Создание фильма", description = "Принимает имя и описание фильма, " +
-            "возвращает фильм с генерированным id")
+    @Operation(summary = "Создание фильма", description = "Принимает имя и описание фильма, "
+            + "возвращает фильм с генерированным id")
     @ApiResponse(responseCode = "201", description = "Успешное добавление фильма",
         content = @Content(mediaType = "application.json",
         schema = @Schema(implementation = Movie.class)))
@@ -68,8 +78,8 @@ public class Controller {
 
 
     @GetMapping("/ticket/saled/{sessionId}")
-    @Operation(summary = "Получение купленных билетов на сеанс", description = "должен быть указан id сеанса в пути + " +
-            "Должен быть заголовок админа с токеном")
+    @Operation(summary = "Получение купленных билетов на сеанс", description = "должен быть указан id сеанса в пути + "
+            + "Должен быть заголовок админа с токеном")
     @ApiResponse(responseCode = "200", description = "Возвращает список купленных билетов на указанный сеанс",
         content = @Content(mediaType = "application.json",
         array = @ArraySchema(schema = @Schema(implementation = Ticket.class))))

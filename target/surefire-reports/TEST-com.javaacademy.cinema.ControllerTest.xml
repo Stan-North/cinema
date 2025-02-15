@@ -1,0 +1,880 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.javaacademy.cinema.ControllerTest" time="8.046" tests="11" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/stanislavkulbitski/Documents/Java learning/cinema/target/test-classes:/Users/stanislavkulbitski/Documents/Java learning/cinema/target/classes:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-starter-data-jdbc/3.3.6/spring-boot-starter-data-jdbc-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.3.6/spring-boot-starter-jdbc-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-jdbc/6.1.15/spring-jdbc-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/data/spring-data-jdbc/3.3.6/spring-data-jdbc-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/data/spring-data-relational/3.3.6/spring-data-relational-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/data/spring-data-commons/3.3.6/spring-data-commons-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-tx/6.1.15/spring-tx-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-context/6.1.15/spring-context-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-beans/6.1.15/spring-beans-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.3.6/spring-boot-starter-web-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-starter/3.3.6/spring-boot-starter-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot/3.3.6/spring-boot-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.3.6/spring-boot-autoconfigure-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.3.6/spring-boot-starter-logging-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/ch/qos/logback/logback-classic/1.5.12/logback-classic-1.5.12.jar:/Users/stanislavkulbitski/.m2/repository/ch/qos/logback/logback-core/1.5.12/logback-core-1.5.12.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.23.1/log4j-to-slf4j-2.23.1.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/logging/log4j/log4j-api/2.23.1/log4j-api-2.23.1.jar:/Users/stanislavkulbitski/.m2/repository/org/slf4j/jul-to-slf4j/2.0.16/jul-to-slf4j-2.0.16.jar:/Users/stanislavkulbitski/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/stanislavkulbitski/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.3.6/spring-boot-starter-json-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.3/jackson-databind-2.17.3.jar:/Users/stanislavkulbitski/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.3/jackson-annotations-2.17.3.jar:/Users/stanislavkulbitski/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.3/jackson-core-2.17.3.jar:/Users/stanislavkulbitski/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.17.3/jackson-datatype-jdk8-2.17.3.jar:/Users/stanislavkulbitski/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.17.3/jackson-datatype-jsr310-2.17.3.jar:/Users/stanislavkulbitski/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.17.3/jackson-module-parameter-names-2.17.3.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.3.6/spring-boot-starter-tomcat-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.33/tomcat-embed-core-10.1.33.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.33/tomcat-embed-el-10.1.33.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.33/tomcat-embed-websocket-10.1.33.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-web/6.1.15/spring-web-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/io/micrometer/micrometer-observation/1.13.8/micrometer-observation-1.13.8.jar:/Users/stanislavkulbitski/.m2/repository/io/micrometer/micrometer-commons/1.13.8/micrometer-commons-1.13.8.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-webmvc/6.1.15/spring-webmvc-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-aop/6.1.15/spring-aop-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-expression/6.1.15/spring-expression-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/postgresql/postgresql/42.7.4/postgresql-42.7.4.jar:/Users/stanislavkulbitski/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/Users/stanislavkulbitski/.m2/repository/org/projectlombok/lombok/1.18.28/lombok-1.18.28.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.3.6/spring-boot-starter-test-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-test/3.3.6/spring-boot-test-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.3.6/spring-boot-test-autoconfigure-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/Users/stanislavkulbitski/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/Users/stanislavkulbitski/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/Users/stanislavkulbitski/.m2/repository/net/minidev/json-smart/2.5.1/json-smart-2.5.1.jar:/Users/stanislavkulbitski/.m2/repository/net/minidev/accessors-smart/2.5.1/accessors-smart-2.5.1.jar:/Users/stanislavkulbitski/.m2/repository/org/ow2/asm/asm/9.6/asm-9.6.jar:/Users/stanislavkulbitski/.m2/repository/org/assertj/assertj-core/3.25.3/assertj-core-3.25.3.jar:/Users/stanislavkulbitski/.m2/repository/net/bytebuddy/byte-buddy/1.14.19/byte-buddy-1.14.19.jar:/Users/stanislavkulbitski/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/Users/stanislavkulbitski/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/stanislavkulbitski/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.5/junit-jupiter-5.10.5.jar:/Users/stanislavkulbitski/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.5/junit-jupiter-api-5.10.5.jar:/Users/stanislavkulbitski/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/stanislavkulbitski/.m2/repository/org/junit/platform/junit-platform-commons/1.10.5/junit-platform-commons-1.10.5.jar:/Users/stanislavkulbitski/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/stanislavkulbitski/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.5/junit-jupiter-params-5.10.5.jar:/Users/stanislavkulbitski/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.5/junit-jupiter-engine-5.10.5.jar:/Users/stanislavkulbitski/.m2/repository/org/junit/platform/junit-platform-engine/1.10.5/junit-platform-engine-1.10.5.jar:/Users/stanislavkulbitski/.m2/repository/org/mockito/mockito-core/5.11.0/mockito-core-5.11.0.jar:/Users/stanislavkulbitski/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.19/byte-buddy-agent-1.14.19.jar:/Users/stanislavkulbitski/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/stanislavkulbitski/.m2/repository/org/mockito/mockito-junit-jupiter/5.11.0/mockito-junit-jupiter-5.11.0.jar:/Users/stanislavkulbitski/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/Users/stanislavkulbitski/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-core/6.1.15/spring-core-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-jcl/6.1.15/spring-jcl-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-test/6.1.15/spring-test-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:/Users/stanislavkulbitski/.m2/repository/io/rest-assured/rest-assured/5.4.0/rest-assured-5.4.0.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/groovy/groovy/4.0.24/groovy-4.0.24.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/groovy/groovy-xml/4.0.24/groovy-xml-4.0.24.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/Users/stanislavkulbitski/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/stanislavkulbitski/.m2/repository/commons-codec/commons-codec/1.16.1/commons-codec-1.16.1.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/stanislavkulbitski/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/stanislavkulbitski/.m2/repository/io/rest-assured/json-path/5.4.0/json-path-5.4.0.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/groovy/groovy-json/4.0.24/groovy-json-4.0.24.jar:/Users/stanislavkulbitski/.m2/repository/io/rest-assured/rest-assured-common/5.4.0/rest-assured-common-5.4.0.jar:/Users/stanislavkulbitski/.m2/repository/io/rest-assured/xml-path/5.4.0/xml-path-5.4.0.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/Users/stanislavkulbitski/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.6.0/springdoc-openapi-starter-webmvc-ui-2.6.0.jar:/Users/stanislavkulbitski/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.6.0/springdoc-openapi-starter-webmvc-api-2.6.0.jar:/Users/stanislavkulbitski/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.6.0/springdoc-openapi-starter-common-2.6.0.jar:/Users/stanislavkulbitski/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.22/swagger-core-jakarta-2.2.22.jar:/Users/stanislavkulbitski/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.22/swagger-annotations-jakarta-2.2.22.jar:/Users/stanislavkulbitski/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.22/swagger-models-jakarta-2.2.22.jar:/Users/stanislavkulbitski/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/stanislavkulbitski/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.17.3/jackson-dataformat-yaml-2.17.3.jar:/Users/stanislavkulbitski/.m2/repository/org/webjars/swagger-ui/5.17.14/swagger-ui-5.17.14.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="catalina.useNaming" value="false"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Europe/Kirov"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="RU"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/stanislavkulbitski/Documents/Java learning/cinema/target/surefire/surefirebooter-20250215212053909_3.jar /Users/stanislavkulbitski/Documents/Java learning/cinema/target/surefire 2025-02-15T21-20-53_870-jvmRun1 surefire-20250215212053909_1tmp surefire_0-20250215212053909_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/stanislavkulbitski/Documents/Java learning/cinema/target/test-classes:/Users/stanislavkulbitski/Documents/Java learning/cinema/target/classes:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-starter-data-jdbc/3.3.6/spring-boot-starter-data-jdbc-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.3.6/spring-boot-starter-jdbc-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/com/zaxxer/HikariCP/5.1.0/HikariCP-5.1.0.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-jdbc/6.1.15/spring-jdbc-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/data/spring-data-jdbc/3.3.6/spring-data-jdbc-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/data/spring-data-relational/3.3.6/spring-data-relational-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/data/spring-data-commons/3.3.6/spring-data-commons-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-tx/6.1.15/spring-tx-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-context/6.1.15/spring-context-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-beans/6.1.15/spring-beans-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/slf4j/slf4j-api/2.0.16/slf4j-api-2.0.16.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.3.6/spring-boot-starter-web-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-starter/3.3.6/spring-boot-starter-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot/3.3.6/spring-boot-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.3.6/spring-boot-autoconfigure-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.3.6/spring-boot-starter-logging-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/ch/qos/logback/logback-classic/1.5.12/logback-classic-1.5.12.jar:/Users/stanislavkulbitski/.m2/repository/ch/qos/logback/logback-core/1.5.12/logback-core-1.5.12.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.23.1/log4j-to-slf4j-2.23.1.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/logging/log4j/log4j-api/2.23.1/log4j-api-2.23.1.jar:/Users/stanislavkulbitski/.m2/repository/org/slf4j/jul-to-slf4j/2.0.16/jul-to-slf4j-2.0.16.jar:/Users/stanislavkulbitski/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/stanislavkulbitski/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.3.6/spring-boot-starter-json-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.17.3/jackson-databind-2.17.3.jar:/Users/stanislavkulbitski/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.17.3/jackson-annotations-2.17.3.jar:/Users/stanislavkulbitski/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.17.3/jackson-core-2.17.3.jar:/Users/stanislavkulbitski/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.17.3/jackson-datatype-jdk8-2.17.3.jar:/Users/stanislavkulbitski/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.17.3/jackson-datatype-jsr310-2.17.3.jar:/Users/stanislavkulbitski/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.17.3/jackson-module-parameter-names-2.17.3.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.3.6/spring-boot-starter-tomcat-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.33/tomcat-embed-core-10.1.33.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.33/tomcat-embed-el-10.1.33.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.33/tomcat-embed-websocket-10.1.33.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-web/6.1.15/spring-web-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/io/micrometer/micrometer-observation/1.13.8/micrometer-observation-1.13.8.jar:/Users/stanislavkulbitski/.m2/repository/io/micrometer/micrometer-commons/1.13.8/micrometer-commons-1.13.8.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-webmvc/6.1.15/spring-webmvc-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-aop/6.1.15/spring-aop-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-expression/6.1.15/spring-expression-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/postgresql/postgresql/42.7.4/postgresql-42.7.4.jar:/Users/stanislavkulbitski/.m2/repository/org/checkerframework/checker-qual/3.42.0/checker-qual-3.42.0.jar:/Users/stanislavkulbitski/.m2/repository/org/projectlombok/lombok/1.18.28/lombok-1.18.28.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.3.6/spring-boot-starter-test-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-test/3.3.6/spring-boot-test-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.3.6/spring-boot-test-autoconfigure-3.3.6.jar:/Users/stanislavkulbitski/.m2/repository/com/jayway/jsonpath/json-path/2.9.0/json-path-2.9.0.jar:/Users/stanislavkulbitski/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.2/jakarta.xml.bind-api-4.0.2.jar:/Users/stanislavkulbitski/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.3/jakarta.activation-api-2.1.3.jar:/Users/stanislavkulbitski/.m2/repository/net/minidev/json-smart/2.5.1/json-smart-2.5.1.jar:/Users/stanislavkulbitski/.m2/repository/net/minidev/accessors-smart/2.5.1/accessors-smart-2.5.1.jar:/Users/stanislavkulbitski/.m2/repository/org/ow2/asm/asm/9.6/asm-9.6.jar:/Users/stanislavkulbitski/.m2/repository/org/assertj/assertj-core/3.25.3/assertj-core-3.25.3.jar:/Users/stanislavkulbitski/.m2/repository/net/bytebuddy/byte-buddy/1.14.19/byte-buddy-1.14.19.jar:/Users/stanislavkulbitski/.m2/repository/org/awaitility/awaitility/4.2.2/awaitility-4.2.2.jar:/Users/stanislavkulbitski/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/stanislavkulbitski/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.5/junit-jupiter-5.10.5.jar:/Users/stanislavkulbitski/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.5/junit-jupiter-api-5.10.5.jar:/Users/stanislavkulbitski/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/stanislavkulbitski/.m2/repository/org/junit/platform/junit-platform-commons/1.10.5/junit-platform-commons-1.10.5.jar:/Users/stanislavkulbitski/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/stanislavkulbitski/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.5/junit-jupiter-params-5.10.5.jar:/Users/stanislavkulbitski/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.5/junit-jupiter-engine-5.10.5.jar:/Users/stanislavkulbitski/.m2/repository/org/junit/platform/junit-platform-engine/1.10.5/junit-platform-engine-1.10.5.jar:/Users/stanislavkulbitski/.m2/repository/org/mockito/mockito-core/5.11.0/mockito-core-5.11.0.jar:/Users/stanislavkulbitski/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.19/byte-buddy-agent-1.14.19.jar:/Users/stanislavkulbitski/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/stanislavkulbitski/.m2/repository/org/mockito/mockito-junit-jupiter/5.11.0/mockito-junit-jupiter-5.11.0.jar:/Users/stanislavkulbitski/.m2/repository/org/skyscreamer/jsonassert/1.5.3/jsonassert-1.5.3.jar:/Users/stanislavkulbitski/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-core/6.1.15/spring-core-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-jcl/6.1.15/spring-jcl-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/springframework/spring-test/6.1.15/spring-test-6.1.15.jar:/Users/stanislavkulbitski/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:/Users/stanislavkulbitski/.m2/repository/io/rest-assured/rest-assured/5.4.0/rest-assured-5.4.0.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/groovy/groovy/4.0.24/groovy-4.0.24.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/groovy/groovy-xml/4.0.24/groovy-xml-4.0.24.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/Users/stanislavkulbitski/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/stanislavkulbitski/.m2/repository/commons-codec/commons-codec/1.16.1/commons-codec-1.16.1.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/stanislavkulbitski/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/stanislavkulbitski/.m2/repository/io/rest-assured/json-path/5.4.0/json-path-5.4.0.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/groovy/groovy-json/4.0.24/groovy-json-4.0.24.jar:/Users/stanislavkulbitski/.m2/repository/io/rest-assured/rest-assured-common/5.4.0/rest-assured-common-5.4.0.jar:/Users/stanislavkulbitski/.m2/repository/io/rest-assured/xml-path/5.4.0/xml-path-5.4.0.jar:/Users/stanislavkulbitski/.m2/repository/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/Users/stanislavkulbitski/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-ui/2.6.0/springdoc-openapi-starter-webmvc-ui-2.6.0.jar:/Users/stanislavkulbitski/.m2/repository/org/springdoc/springdoc-openapi-starter-webmvc-api/2.6.0/springdoc-openapi-starter-webmvc-api-2.6.0.jar:/Users/stanislavkulbitski/.m2/repository/org/springdoc/springdoc-openapi-starter-common/2.6.0/springdoc-openapi-starter-common-2.6.0.jar:/Users/stanislavkulbitski/.m2/repository/io/swagger/core/v3/swagger-core-jakarta/2.2.22/swagger-core-jakarta-2.2.22.jar:/Users/stanislavkulbitski/.m2/repository/io/swagger/core/v3/swagger-annotations-jakarta/2.2.22/swagger-annotations-jakarta-2.2.22.jar:/Users/stanislavkulbitski/.m2/repository/io/swagger/core/v3/swagger-models-jakarta/2.2.22/swagger-models-jakarta-2.2.22.jar:/Users/stanislavkulbitski/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/stanislavkulbitski/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.17.3/jackson-dataformat-yaml-2.17.3.jar:/Users/stanislavkulbitski/.m2/repository/org/webjars/swagger-ui/5.17.14/swagger-ui-5.17.14.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/stanislavkulbitski"/>
+    <property name="user.language" value="ru"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-07-16"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/stanislavkulbitski/Documents/Java learning/cinema"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="/Users/stanislavkulbitski/Documents/Java learning/cinema/target/surefire/surefirebooter-20250215212053909_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="17.0.12+8-LTS-286"/>
+    <property name="user.name" value="stanislavkulbitski"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="13.5"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/stanislavkulbitski/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/8b/34x_9tdn1nbdzsw54m53w6b80000gn/T/"/>
+    <property name="idea.version" value="2024.1.4"/>
+    <property name="catalina.home" value="/private/var/folders/8b/34x_9tdn1nbdzsw54m53w6b80000gn/T/tomcat.8080.9439847963690570521"/>
+    <property name="com.zaxxer.hikari.pool_number" value="12"/>
+    <property name="java.version" value="17.0.12"/>
+    <property name="user.dir" value="/Users/stanislavkulbitski/Documents/Java learning/cinema"/>
+    <property name="os.arch" value="aarch64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="9229"/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="catalina.base" value="/private/var/folders/8b/34x_9tdn1nbdzsw54m53w6b80000gn/T/tomcat.8080.16708570897870775614"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/stanislavkulbitski/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="17.0.12+8-LTS-286"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="getFreeTicketsBySessionId" classname="com.javaacademy.cinema.ControllerTest" time="2.572">
+    <system-out><![CDATA[21:20:54.306 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.javaacademy.cinema.ControllerTest]: ControllerTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+21:20:54.360 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.javaacademy.cinema.CinemaApplication for test class com.javaacademy.cinema.ControllerTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.6)
+
+2025-02-15T21:20:54.791+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Starting ControllerTest using Java 17.0.12 with PID 9229 (started by stanislavkulbitski in /Users/stanislavkulbitski/Documents/Java learning/cinema)
+2025-02-15T21:20:54.792+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : The following 1 profile is active: "local"
+2025-02-15T21:20:55.219+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-15T21:20:55.233+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 10 ms. Found 0 JDBC repository interfaces.
+2025-02-15T21:20:55.496+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-15T21:20:55.505+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-15T21:20:55.506+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-02-15T21:20:55.551+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-15T21:20:55.552+03:00  INFO 9229 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 747 ms
+2025-02-15T21:20:55.879+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-02-15T21:20:55.999+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4bb9f7d4
+2025-02-15T21:20:55.999+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-02-15T21:20:56.062+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2025-02-15T21:20:56.062+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-15T21:20:56.062+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-02-15T21:20:56.092+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-15T21:20:56.098+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Started ControllerTest in 1.449 seconds (process running for 2.15)
+2025-02-15T21:20:56.110+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-02-15T21:20:56.162+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.6)
+
+2025-02-15T21:20:56.179+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Starting ControllerTest using Java 17.0.12 with PID 9229 (started by stanislavkulbitski in /Users/stanislavkulbitski/Documents/Java learning/cinema)
+2025-02-15T21:20:56.179+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : The following 1 profile is active: "local"
+2025-02-15T21:20:56.271+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-15T21:20:56.274+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JDBC repository interfaces.
+2025-02-15T21:20:56.319+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-15T21:20:56.320+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-15T21:20:56.320+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-02-15T21:20:56.335+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-15T21:20:56.336+03:00  INFO 9229 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 156 ms
+2025-02-15T21:20:56.437+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-02-15T21:20:56.461+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@2fc435e9
+2025-02-15T21:20:56.461+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-02-15T21:20:56.470+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2025-02-15T21:20:56.470+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-15T21:20:56.471+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-02-15T21:20:56.476+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-15T21:20:56.479+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Started ControllerTest in 0.313 seconds (process running for 2.531)
+Request method:	GET
+Request URI:	http://localhost:8080/session/1/free-place
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+2025-02-15T21:20:57.792+03:00  INFO 9229 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-15T21:20:57.810+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-15T21:20:57.839+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 29 ms
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sat, 15 Feb 2025 18:20:58 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+[
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5"
+]
+]]></system-out>
+  </testcase>
+  <testcase name="getBoughtTicketsFailure" classname="com.javaacademy.cinema.ControllerTest" time="1.014">
+    <system-out><![CDATA[2025-02-15T21:20:58.683+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-02-15T21:20:58.685+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.6)
+
+2025-02-15T21:20:58.736+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Starting ControllerTest using Java 17.0.12 with PID 9229 (started by stanislavkulbitski in /Users/stanislavkulbitski/Documents/Java learning/cinema)
+2025-02-15T21:20:58.736+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : The following 1 profile is active: "local"
+2025-02-15T21:20:58.876+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-15T21:20:58.879+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JDBC repository interfaces.
+2025-02-15T21:20:59.360+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-15T21:20:59.367+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-15T21:20:59.368+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-02-15T21:20:59.398+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-15T21:20:59.399+03:00  INFO 9229 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 659 ms
+2025-02-15T21:20:59.555+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-02-15T21:20:59.595+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@4dbeae45
+2025-02-15T21:20:59.595+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2025-02-15T21:20:59.609+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2025-02-15T21:20:59.609+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-15T21:20:59.609+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-02-15T21:20:59.633+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-15T21:20:59.636+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Started ControllerTest in 0.931 seconds (process running for 5.688)
+Request method:	GET
+Request URI:	http://localhost:8080/ticket/saled/1
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		user-token=wrongValue
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+2025-02-15T21:20:59.661+03:00  INFO 9229 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-15T21:20:59.661+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-15T21:20:59.662+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+HTTP/1.1 403 
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 52
+Date: Sat, 15 Feb 2025 18:20:59 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+Неверный токен пользователя
+]]></system-out>
+  </testcase>
+  <testcase name="buyTicketSuccess" classname="com.javaacademy.cinema.ControllerTest" time="0.394">
+    <system-out><![CDATA[2025-02-15T21:20:59.694+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2025-02-15T21:20:59.695+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.6)
+
+2025-02-15T21:20:59.709+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Starting ControllerTest using Java 17.0.12 with PID 9229 (started by stanislavkulbitski in /Users/stanislavkulbitski/Documents/Java learning/cinema)
+2025-02-15T21:20:59.710+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : The following 1 profile is active: "local"
+2025-02-15T21:20:59.790+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-15T21:20:59.793+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JDBC repository interfaces.
+2025-02-15T21:20:59.815+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-15T21:20:59.816+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-15T21:20:59.816+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-02-15T21:20:59.826+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-15T21:20:59.826+03:00  INFO 9229 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 116 ms
+2025-02-15T21:20:59.897+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2025-02-15T21:20:59.909+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@7eeabaf3
+2025-02-15T21:20:59.909+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2025-02-15T21:20:59.916+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2025-02-15T21:20:59.916+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-15T21:20:59.917+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-02-15T21:20:59.921+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-15T21:20:59.924+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Started ControllerTest in 0.227 seconds (process running for 5.976)
+Request method:	POST
+Request URI:	http://localhost:8080/ticket/booking
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "session_id": 1,
+    "place_name": "A1"
+}
+2025-02-15T21:20:59.978+03:00  INFO 9229 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-15T21:20:59.978+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-15T21:20:59.978+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sat, 15 Feb 2025 18:21:00 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+{
+    "ticket_id": 1,
+    "place_name": "A1",
+    "movie_name": "Тестовое название фильма1",
+    "date": "2025-02-15T19:28:57.903351"
+}
+]]></system-out>
+  </testcase>
+  <testcase name="saveMovieSuccess" classname="com.javaacademy.cinema.ControllerTest" time="0.308">
+    <system-out><![CDATA[2025-02-15T21:21:00.090+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2025-02-15T21:21:00.101+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.6)
+
+2025-02-15T21:21:00.114+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Starting ControllerTest using Java 17.0.12 with PID 9229 (started by stanislavkulbitski in /Users/stanislavkulbitski/Documents/Java learning/cinema)
+2025-02-15T21:21:00.114+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : The following 1 profile is active: "local"
+2025-02-15T21:21:00.185+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-15T21:21:00.187+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2025-02-15T21:21:00.207+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-15T21:21:00.208+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-15T21:21:00.208+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-02-15T21:21:00.214+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-15T21:21:00.214+03:00  INFO 9229 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 99 ms
+2025-02-15T21:21:00.329+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2025-02-15T21:21:00.352+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@2cf073da
+2025-02-15T21:21:00.352+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2025-02-15T21:21:00.360+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2025-02-15T21:21:00.360+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-15T21:21:00.360+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-02-15T21:21:00.365+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-15T21:21:00.368+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Started ControllerTest in 0.264 seconds (process running for 6.42)
+Request method:	POST
+Request URI:	http://localhost:8080/movie
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		user-token=secretadmin123
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "name": "Тестовое название фильма1",
+    "description": "Тестовое описание фильма1"
+}
+2025-02-15T21:21:00.379+03:00  INFO 9229 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-15T21:21:00.379+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-15T21:21:00.380+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+HTTP/1.1 201 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sat, 15 Feb 2025 18:21:00 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+{
+    "id": 7,
+    "name": "Тестовое название фильма1",
+    "description": "Тестовое описание фильма1"
+}
+]]></system-out>
+  </testcase>
+  <testcase name="getAllSessionsSuccess" classname="com.javaacademy.cinema.ControllerTest" time="0.278">
+    <system-out><![CDATA[2025-02-15T21:21:00.397+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2025-02-15T21:21:00.398+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.6)
+
+2025-02-15T21:21:00.414+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Starting ControllerTest using Java 17.0.12 with PID 9229 (started by stanislavkulbitski in /Users/stanislavkulbitski/Documents/Java learning/cinema)
+2025-02-15T21:21:00.414+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : The following 1 profile is active: "local"
+2025-02-15T21:21:00.482+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-15T21:21:00.485+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JDBC repository interfaces.
+2025-02-15T21:21:00.510+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-15T21:21:00.510+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-15T21:21:00.510+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-02-15T21:21:00.517+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-15T21:21:00.518+03:00  INFO 9229 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 103 ms
+2025-02-15T21:21:00.590+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2025-02-15T21:21:00.603+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection org.postgresql.jdbc.PgConnection@165ec33
+2025-02-15T21:21:00.603+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2025-02-15T21:21:00.609+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2025-02-15T21:21:00.610+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-15T21:21:00.610+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-02-15T21:21:00.613+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-15T21:21:00.615+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Started ControllerTest in 0.215 seconds (process running for 6.668)
+Request method:	GET
+Request URI:	http://localhost:8080/session?page=1
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+2025-02-15T21:21:00.627+03:00  INFO 9229 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-15T21:21:00.628+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-15T21:21:00.628+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sat, 15 Feb 2025 18:21:00 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+{
+    "content": [
+        {
+            "id": 1,
+            "movie_name": "Тестовое название фильма1",
+            "date": "2025-02-15T19:28:57.903351",
+            "price": 100.00
+        },
+        {
+            "id": 2,
+            "movie_name": "Тестовое название фильма1",
+            "date": "2025-02-15T19:32:09.71891",
+            "price": 100.00
+        },
+        {
+            "id": 3,
+            "movie_name": "Тестовое название фильма1",
+            "date": "2025-02-15T19:33:40.246107",
+            "price": 100.00
+        },
+        {
+            "id": 4,
+            "movie_name": "Тестовое название фильма1",
+            "date": "2025-02-15T19:34:05.687856",
+            "price": 100.00
+        },
+        {
+            "id": 5,
+            "movie_name": "Тестовое название фильма1",
+            "date": "2025-02-15T21:07:52.419047",
+            "price": 100.00
+        },
+        {
+            "id": 6,
+            "movie_name": "Тестовое название фильма1",
+            "date": "2025-02-15T21:11:37.280253",
+            "price": 100.00
+        },
+        {
+            "id": 7,
+            "movie_name": "Тестовое название фильма1",
+            "date": "2025-02-15T21:11:53.491977",
+            "price": 100.00
+        }
+    ],
+    "pageNumber": 1,
+    "amountOfPages": 0,
+    "maxPageSize": 10,
+    "currentSize": 7
+}
+]]></system-out>
+  </testcase>
+  <testcase name="buyTicketFailure" classname="com.javaacademy.cinema.ControllerTest" time="0.295">
+    <system-out><![CDATA[2025-02-15T21:21:00.678+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2025-02-15T21:21:00.688+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.6)
+
+2025-02-15T21:21:00.698+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Starting ControllerTest using Java 17.0.12 with PID 9229 (started by stanislavkulbitski in /Users/stanislavkulbitski/Documents/Java learning/cinema)
+2025-02-15T21:21:00.698+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : The following 1 profile is active: "local"
+2025-02-15T21:21:00.756+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-15T21:21:00.758+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JDBC repository interfaces.
+2025-02-15T21:21:00.778+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-15T21:21:00.779+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-15T21:21:00.779+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-02-15T21:21:00.785+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-15T21:21:00.785+03:00  INFO 9229 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 87 ms
+2025-02-15T21:21:00.852+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2025-02-15T21:21:00.863+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-7 - Added connection org.postgresql.jdbc.PgConnection@56059cf1
+2025-02-15T21:21:00.864+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2025-02-15T21:21:00.870+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2025-02-15T21:21:00.871+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-15T21:21:00.871+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-02-15T21:21:00.876+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-15T21:21:00.879+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Started ControllerTest in 0.189 seconds (process running for 6.931)
+Request method:	POST
+Request URI:	http://localhost:8080/ticket/booking
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "session_id": 1,
+    "place_name": "A1"
+}
+2025-02-15T21:21:00.887+03:00  INFO 9229 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-15T21:21:00.887+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-15T21:21:00.887+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+HTTP/1.1 409 
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 56
+Date: Sat, 15 Feb 2025 18:21:00 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+Билет с указанным id уже куплен!
+]]></system-out>
+  </testcase>
+  <testcase name="saveMovieFailure" classname="com.javaacademy.cinema.ControllerTest" time="0.329">
+    <system-out><![CDATA[2025-02-15T21:21:00.972+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2025-02-15T21:21:00.998+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.6)
+
+2025-02-15T21:21:01.014+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Starting ControllerTest using Java 17.0.12 with PID 9229 (started by stanislavkulbitski in /Users/stanislavkulbitski/Documents/Java learning/cinema)
+2025-02-15T21:21:01.015+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : The following 1 profile is active: "local"
+2025-02-15T21:21:01.135+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-15T21:21:01.140+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
+2025-02-15T21:21:01.168+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-15T21:21:01.169+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-15T21:21:01.169+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-02-15T21:21:01.176+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-15T21:21:01.176+03:00  INFO 9229 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 161 ms
+2025-02-15T21:21:01.258+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Starting...
+2025-02-15T21:21:01.269+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-8 - Added connection org.postgresql.jdbc.PgConnection@5ac92082
+2025-02-15T21:21:01.269+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Start completed.
+2025-02-15T21:21:01.277+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2025-02-15T21:21:01.277+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-15T21:21:01.277+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-02-15T21:21:01.282+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-15T21:21:01.285+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Started ControllerTest in 0.283 seconds (process running for 7.337)
+Request method:	POST
+Request URI:	http://localhost:8080/movie
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		user-token=wrongtoken
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "name": "Тестовое название фильма1",
+    "description": "Тестовое описание фильма1"
+}
+2025-02-15T21:21:01.294+03:00  INFO 9229 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-15T21:21:01.294+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-15T21:21:01.295+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+HTTP/1.1 403 
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 52
+Date: Sat, 15 Feb 2025 18:21:01 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+Неверный токен пользователя
+]]></system-out>
+  </testcase>
+  <testcase name="saveSessionSuccess" classname="com.javaacademy.cinema.ControllerTest" time="0.268">
+    <system-out><![CDATA[2025-02-15T21:21:01.304+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown initiated...
+2025-02-15T21:21:01.305+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-8 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.6)
+
+2025-02-15T21:21:01.315+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Starting ControllerTest using Java 17.0.12 with PID 9229 (started by stanislavkulbitski in /Users/stanislavkulbitski/Documents/Java learning/cinema)
+2025-02-15T21:21:01.315+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : The following 1 profile is active: "local"
+2025-02-15T21:21:01.376+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-15T21:21:01.379+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2025-02-15T21:21:01.398+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-15T21:21:01.398+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-15T21:21:01.398+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-02-15T21:21:01.404+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-15T21:21:01.405+03:00  INFO 9229 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 90 ms
+2025-02-15T21:21:01.465+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Starting...
+2025-02-15T21:21:01.492+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-9 - Added connection org.postgresql.jdbc.PgConnection@47fbf070
+2025-02-15T21:21:01.492+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Start completed.
+2025-02-15T21:21:01.500+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2025-02-15T21:21:01.500+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-15T21:21:01.500+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-02-15T21:21:01.507+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-15T21:21:01.509+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Started ControllerTest in 0.203 seconds (process running for 7.561)
+Request method:	POST
+Request URI:	http://localhost:8080/session
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		user-token=secretadmin123
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "movieId": 1,
+    "date": [
+        2025,
+        2,
+        15,
+        21,
+        21,
+        1,
+        511252000
+    ],
+    "price": 100
+}
+2025-02-15T21:21:01.524+03:00  INFO 9229 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-15T21:21:01.524+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-15T21:21:01.524+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+HTTP/1.1 201 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sat, 15 Feb 2025 18:21:01 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+{
+    "id": 8,
+    "movie": {
+        "id": 1,
+        "name": "Тестовое название фильма1",
+        "description": "Тестовое описание фильма1"
+    },
+    "date": "2025-02-15T21:21:01.511252",
+    "price": 100
+}
+]]></system-out>
+  </testcase>
+  <testcase name="getBoughtTickets" classname="com.javaacademy.cinema.ControllerTest" time="0.293">
+    <system-out><![CDATA[2025-02-15T21:21:01.573+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown initiated...
+2025-02-15T21:21:01.599+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-9 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.6)
+
+2025-02-15T21:21:01.608+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Starting ControllerTest using Java 17.0.12 with PID 9229 (started by stanislavkulbitski in /Users/stanislavkulbitski/Documents/Java learning/cinema)
+2025-02-15T21:21:01.608+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : The following 1 profile is active: "local"
+2025-02-15T21:21:01.669+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-15T21:21:01.671+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JDBC repository interfaces.
+2025-02-15T21:21:01.692+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-15T21:21:01.692+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-15T21:21:01.692+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-02-15T21:21:01.699+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-15T21:21:01.699+03:00  INFO 9229 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 90 ms
+2025-02-15T21:21:01.758+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Starting...
+2025-02-15T21:21:01.771+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-10 - Added connection org.postgresql.jdbc.PgConnection@3ebda1be
+2025-02-15T21:21:01.772+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Start completed.
+2025-02-15T21:21:01.777+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2025-02-15T21:21:01.778+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-15T21:21:01.778+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-02-15T21:21:01.781+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-15T21:21:01.783+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Started ControllerTest in 0.182 seconds (process running for 7.835)
+Request method:	GET
+Request URI:	http://localhost:8080/ticket/saled/1
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		user-token=secretadmin123
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+2025-02-15T21:21:01.852+03:00  INFO 9229 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-15T21:21:01.852+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-15T21:21:01.853+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sat, 15 Feb 2025 18:21:01 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+[
+    {
+        "id": 1,
+        "session": {
+            "id": 1,
+            "movie": {
+                "id": 1,
+                "name": "Тестовое название фильма1",
+                "description": "Тестовое описание фильма1"
+            },
+            "date": "2025-02-15T19:28:57.903351",
+            "price": 100.00
+        },
+        "seat": {
+            "id": 1,
+            "title": "A1"
+        },
+        "isBought": true
+    }
+]
+]]></system-out>
+  </testcase>
+  <testcase name="saveSessionFailure" classname="com.javaacademy.cinema.ControllerTest" time="0.208">
+    <system-out><![CDATA[2025-02-15T21:21:01.866+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown initiated...
+2025-02-15T21:21:01.879+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-10 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.6)
+
+2025-02-15T21:21:01.888+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Starting ControllerTest using Java 17.0.12 with PID 9229 (started by stanislavkulbitski in /Users/stanislavkulbitski/Documents/Java learning/cinema)
+2025-02-15T21:21:01.889+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : The following 1 profile is active: "local"
+2025-02-15T21:21:01.947+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-15T21:21:01.949+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2025-02-15T21:21:01.966+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-15T21:21:01.966+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-15T21:21:01.966+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-02-15T21:21:01.971+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-15T21:21:01.972+03:00  INFO 9229 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 82 ms
+2025-02-15T21:21:02.019+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Starting...
+2025-02-15T21:21:02.044+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-11 - Added connection org.postgresql.jdbc.PgConnection@4ceb6854
+2025-02-15T21:21:02.044+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Start completed.
+2025-02-15T21:21:02.051+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2025-02-15T21:21:02.051+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-15T21:21:02.051+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-02-15T21:21:02.055+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-15T21:21:02.058+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Started ControllerTest in 0.176 seconds (process running for 8.11)
+Request method:	POST
+Request URI:	http://localhost:8080/session
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		user-token=wrongvalue
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:
+{
+    "movieId": 1,
+    "date": [
+        2025,
+        2,
+        15,
+        21,
+        21,
+        2,
+        59887000
+    ],
+    "price": 100
+}
+2025-02-15T21:21:02.066+03:00  INFO 9229 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-15T21:21:02.066+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-15T21:21:02.067+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+HTTP/1.1 403 
+Content-Type: text/plain;charset=UTF-8
+Content-Length: 52
+Date: Sat, 15 Feb 2025 18:21:02 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+Неверный токен пользователя
+]]></system-out>
+  </testcase>
+  <testcase name="getAllMoviesSuccess" classname="com.javaacademy.cinema.ControllerTest" time="0.187">
+    <system-out><![CDATA[2025-02-15T21:21:02.075+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown initiated...
+2025-02-15T21:21:02.076+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-11 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.6)
+
+2025-02-15T21:21:02.086+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Starting ControllerTest using Java 17.0.12 with PID 9229 (started by stanislavkulbitski in /Users/stanislavkulbitski/Documents/Java learning/cinema)
+2025-02-15T21:21:02.086+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : The following 1 profile is active: "local"
+2025-02-15T21:21:02.147+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-02-15T21:21:02.149+03:00  INFO 9229 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 1 ms. Found 0 JDBC repository interfaces.
+2025-02-15T21:21:02.167+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-02-15T21:21:02.167+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-02-15T21:21:02.167+03:00  INFO 9229 --- [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.33]
+2025-02-15T21:21:02.173+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-02-15T21:21:02.173+03:00  INFO 9229 --- [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 87 ms
+2025-02-15T21:21:02.218+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Starting...
+2025-02-15T21:21:02.232+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-12 - Added connection org.postgresql.jdbc.PgConnection@44f61a32
+2025-02-15T21:21:02.232+03:00  INFO 9229 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-12 - Start completed.
+2025-02-15T21:21:02.237+03:00  INFO 9229 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring TestDispatcherServlet ''
+2025-02-15T21:21:02.237+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-02-15T21:21:02.237+03:00  INFO 9229 --- [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2025-02-15T21:21:02.241+03:00  INFO 9229 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-02-15T21:21:02.243+03:00  INFO 9229 --- [           main] com.javaacademy.cinema.ControllerTest    : Started ControllerTest in 0.166 seconds (process running for 8.295)
+Request method:	GET
+Request URI:	http://localhost:8080/movie?page=1
+Proxy:			<none>
+Request params:	<none>
+Query params:	<none>
+Form params:	<none>
+Path params:	<none>
+Headers:		Accept=*/*
+				Content-Type=application/json
+Cookies:		<none>
+Multiparts:		<none>
+Body:			<none>
+2025-02-15T21:21:02.249+03:00  INFO 9229 --- [nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-02-15T21:21:02.249+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-02-15T21:21:02.249+03:00  INFO 9229 --- [nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+HTTP/1.1 200 
+Content-Type: application/json
+Transfer-Encoding: chunked
+Date: Sat, 15 Feb 2025 18:21:02 GMT
+Keep-Alive: timeout=60
+Connection: keep-alive
+
+{
+    "content": [
+        {
+            "name": "Тестовое название фильма1",
+            "description": "Тестовое описание фильма1"
+        },
+        {
+            "name": "Тестовое название фильма1",
+            "description": "Тестовое описание фильма1"
+        },
+        {
+            "name": "Тестовое название фильма1",
+            "description": "Тестовое описание фильма1"
+        },
+        {
+            "name": "Тестовое название фильма1",
+            "description": "Тестовое описание фильма1"
+        },
+        {
+            "name": "Тестовое название фильма1",
+            "description": "Тестовое описание фильма1"
+        },
+        {
+            "name": "Тестовое название фильма1",
+            "description": "Тестовое описание фильма1"
+        },
+        {
+            "name": "Тестовое название фильма1",
+            "description": "Тестовое описание фильма1"
+        }
+    ],
+    "pageNumber": 1,
+    "amountOfPages": 0,
+    "maxPageSize": 10,
+    "currentSize": 7
+}
+]]></system-out>
+  </testcase>
+</testsuite>

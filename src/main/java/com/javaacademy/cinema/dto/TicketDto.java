@@ -17,7 +17,7 @@ public class TicketDto {
     @Schema(description = "id билета")
     private Integer ticketId;
     @JsonProperty(value = "place_name")
-    @Schema(description = "Номер метса")
+    @Schema(description = "Номер места")
     private String seatTitle;
     @JsonProperty(value = "movie_name")
     @Schema(description = "Название фильма")
