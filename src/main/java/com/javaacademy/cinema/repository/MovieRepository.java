@@ -1,4 +1,4 @@
-package com.javaacademy.cinema.repository.movie;
+package com.javaacademy.cinema.repository;
 
 import com.javaacademy.cinema.dto.SaveMovieRequest;
 import com.javaacademy.cinema.entity.Movie;

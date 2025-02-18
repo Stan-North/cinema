@@ -1,13 +1,14 @@
-package com.javaacademy.cinema.repository.ticket;
+package com.javaacademy.cinema.repository.impl;
 
 import com.javaacademy.cinema.common.ErrorMessages;
-import com.javaacademy.cinema.dto.SaveTicketDto;
+import com.javaacademy.cinema.entity.Seat;
 import com.javaacademy.cinema.entity.Session;
 import com.javaacademy.cinema.entity.Ticket;
 import com.javaacademy.cinema.exception.TicketDoesNotExistException;
 import com.javaacademy.cinema.exception.TicketStatusException;
-import com.javaacademy.cinema.repository.seat.SeatRepository;
-import com.javaacademy.cinema.repository.session.SessionRepository;
+import com.javaacademy.cinema.repository.SeatRepository;
+import com.javaacademy.cinema.repository.SessionRepository;
+import com.javaacademy.cinema.repository.TicketRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.SneakyThrows;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -56,13 +57,13 @@ public class TicketRepositoryImpl implements TicketRepository {
     }
 
     @Override
-    public Ticket save(SaveTicketDto dto) {
+    public Ticket save(Session session, Seat seat) {
         Integer returningId = jdbcTemplate.queryForObject(
                 INSERT_TICKET_SQL,
                 Integer.class,
-                dto.getSeat().getId(),
-                dto.getSession().getId());
-        return new Ticket(returningId, dto.getSession(), dto.getSeat(), false);
+                seat.getId(),
+                session.getId());
+        return new Ticket(returningId, session, seat, false);
     }
 
     @Override

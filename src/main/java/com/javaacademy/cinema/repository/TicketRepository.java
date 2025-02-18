@@ -1,6 +1,6 @@
-package com.javaacademy.cinema.repository.ticket;
+package com.javaacademy.cinema.repository;
 
-import com.javaacademy.cinema.dto.SaveTicketDto;
+import com.javaacademy.cinema.entity.Seat;
 import com.javaacademy.cinema.entity.Session;
 import com.javaacademy.cinema.entity.Ticket;
 
@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface TicketRepository {
     Optional<Ticket> findById(Integer id);
-    Ticket save(SaveTicketDto dto);
+    Ticket save(Session session, Seat seat);
     void checkAndUpdateTicket(Integer id);
     List<Ticket> findBought(Session session);
     List<Ticket> findNotBought(Session session);

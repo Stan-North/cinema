@@ -41,10 +41,14 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
     }
 
+    @ExceptionHandler(UserTokenException.class)
+    public ResponseEntity<String> handleUserTokenException(Exception e) {
+        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(ErrorMessages.INVALID_USER_TOKEN);
+    }
+
     @ExceptionHandler(Exception.class)
     public ResponseEntity<String> handleGeneralException(Exception e) {
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(ErrorMessages.UNEXPECTED_ERROR
                 + e.getMessage());
     }
-
 }

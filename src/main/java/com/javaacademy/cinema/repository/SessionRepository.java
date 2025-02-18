@@ -1,4 +1,4 @@
-package com.javaacademy.cinema.repository.session;
+package com.javaacademy.cinema.repository;
 
 import com.javaacademy.cinema.dto.SaveSessionRequest;
 import com.javaacademy.cinema.entity.Session;
